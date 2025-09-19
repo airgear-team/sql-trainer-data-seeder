@@ -1,0 +1,7 @@
+create table ordering as
+select author, title,
+(
+    select round(avg(amount)) from book
+) as amount
+from book
+where amount < (select round(avg(amount)) from book);

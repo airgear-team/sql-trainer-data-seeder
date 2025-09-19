@@ -1,0 +1,3 @@
+select name_city, name_author, DATE_ADD('2020-01-01', INTERVAL FLOOR(RAND() * 366) DAY) AS 'Дата'
+from city cross join author
+order by name_city, Дата desc

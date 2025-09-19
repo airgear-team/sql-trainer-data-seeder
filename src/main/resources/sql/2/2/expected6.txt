@@ -1,0 +1,5 @@
+select name_author
+from book
+inner join author on book.author_id=author.author_id
+group by name_author
+having  count(DISTINCT genre_id) = 1

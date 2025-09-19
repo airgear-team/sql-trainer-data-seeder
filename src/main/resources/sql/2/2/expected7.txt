@@ -1,0 +1,20 @@
+WITH PopularGenres AS (
+    SELECT g.name_genre
+    FROM book b
+    JOIN genre g ON b.genre_id = g.genre_id
+    GROUP BY g.name_genre
+    ORDER BY SUM(b.amount) DESC
+    LIMIT 2
+)
+
+SELECT
+    b.title AS title,
+    a.name_author AS name_author,
+    g.name_genre AS name_genre,
+    b.price AS price,
+    b.amount AS amount
+FROM book b
+JOIN author a ON b.author_id = a.author_id
+JOIN genre g ON b.genre_id = g.genre_id
+JOIN PopularGenres pg ON g.name_genre = pg.name_genre
+ORDER BY b.title;

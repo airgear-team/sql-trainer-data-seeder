@@ -1,0 +1,1 @@
+select title, author from book where title like "_% %" and author like "% %С.%" order by title

@@ -1,0 +1,136 @@
+<div class="container">
+  <h2>Створення таблиці з зовнішніми ключами</h2>
+
+  <p>
+    Під час створення залежної таблиці (тобто таблиці, що містить зовнішні ключі), слід враховувати:
+  </p>
+
+  <ul style="list-style-type: disc;">
+    <li>кожен зовнішній ключ повинен мати той самий тип даних, що й пов’язане поле головної таблиці (у наших прикладах
+      це <code>INT</code>);</li>
+    <li>необхідно вказати головну таблицю та поле, з яким встановлюється зв’язок:</li>
+  </ul>
+
+  <pre class="sqlCodeBlock">FOREIGN KEY (поле_залежної_таблиці) REFERENCES головна_таблиця (поле_головної_таблиці)</pre>
+
+  <p>
+    За замовчуванням будь-яке поле, окрім ключового, може містити значення <code>NULL</code>. Це можна змінити, задавши
+    обмеження <code>NOT NULL</code>:
+  </p>
+
+  <pre class="sqlCodeBlock">
+CREATE TABLE example (
+    column_1 INT NOT NULL, 
+    column_2 VARCHAR(10)
+);
+</pre>
+
+  <p>
+    У створеній таблиці поле <code>column_1</code> не може бути порожнім, а <code>column_2</code> — може.
+  </p>
+
+  <p>
+    Для зовнішніх ключів рекомендується встановлювати обмеження <code>NOT NULL</code>, якщо це не суперечить іншим
+    умовам.
+  </p>
+
+  <h2>Приклад</h2>
+
+  <p>Створення таблиці <code>book</code> зі зв’язком із таблицею <code>author</code>:</p>
+
+  <table class="infoTable">
+    <thead>
+      <tr>
+        <th>Поле</th>
+        <th>Тип, опис</th>
+        <th>Зв’язки</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>book_id</td>
+        <td><code>INT PRIMARY KEY AUTO_INCREMENT</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>title</td>
+        <td><code>VARCHAR(50)</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>author_id</td>
+        <td><code>INT NOT NULL</code></td>
+        <td>зовнішній ключ до <code>author(author_id)</code></td>
+      </tr>
+      <tr>
+        <td>price</td>
+        <td><code>DECIMAL(8,2)</code></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>amount</td>
+        <td><code>INT</code></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="skewed">Запит:</p>
+
+  <pre class="sqlCodeBlock">
+CREATE TABLE book (
+    book_id INT PRIMARY KEY AUTO_INCREMENT, 
+    title VARCHAR(50), 
+    author_id INT NOT NULL, 
+    price DECIMAL(8,2), 
+    amount INT, 
+    FOREIGN KEY (author_id) REFERENCES author (author_id)
+);
+</pre>
+
+  <h2>Завдання</h2>
+  <p>
+    Перепишіть SQL-запит створення таблиці <code>book</code>, щоб її структура відповідала логічній схемі (таблиця
+    <code>genre</code> вже створена, порядок розташування стовпців має відповідати порядку на логічній схемі таблиці
+    <code>book</code>). Поле <code>genre_id</code> має бути зовнішнім ключем на таблицю <code>genre</code>,
+    але <strong>без обмеження NOT NULL</strong>.
+  </p>
+  <p>Структура таблиці <code>genre</code>:</p>
+
+  <table class="infoTable">
+    <thead>
+      <tr>
+        <th>Поле</th>
+        <th>Тип, опис</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>genre_id</td>
+        <td><code>INT PRIMARY KEY AUTO_INCREMENT</code></td>
+      </tr>
+      <tr>
+        <td>name_genre</td>
+        <td><code>VARCHAR(30)</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <p>
+    Логічна схема (необхідно створити лише таблицю <code>book</code>):
+  </p>
+
+  <div data-img-id="2.1.7.1"></div>
+
+  <p></p>
+
+  <div id="toggle2" style="cursor: pointer;">
+    <div><span class="arrow-text"><strong>Результат</strong></span></div>
+  </div>
+
+  <div id="hiddenText2" style="display:none;">
+    <pre class="sqlResultTable">Affected rows: 0</pre>
+  </div>
+
+</div>

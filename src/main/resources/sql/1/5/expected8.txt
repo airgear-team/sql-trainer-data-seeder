@@ -1,0 +1,3 @@
+delete from supply
+where author in (select author from book where amount>=10);
+select * from supply;

@@ -1,0 +1,81 @@
+<div class="container">
+    <h2>Завдання</h2>
+
+    <p>
+        Додати до таблиці <code>buy_book</code> замовлення з номером <strong>5</strong>, яке повинно містити:
+        <strong>2 примірники</strong> книги Пастернака «Лірика» та <strong>1 примірник</strong> книги Булгакова «Біла
+        гвардія».
+    </p>
+
+    <h3>Фрагмент логічної схеми бази даних:</h3>
+    <div data-img-id="2.5.3.1"></div>
+
+
+    <p></p>
+
+
+    <div id="toggle2" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Пояснення</strong></span></div>
+    </div>
+    <div id="hiddenText2" style="display:none;">
+        <p>Для вставляння кожної книги використовуйте окремий запит. Не забувайте між запитами ставити крапку з комою.
+        </p>
+    </div>
+
+    <p></p>
+
+    <div id="toggle0" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Пов’язані кроки</strong></span></div>
+    </div>
+    <div id="hiddenText0" style="display:none;">
+        <ul>
+            <li>додавання записів (крок, крок, крок);</li>
+            <li>умова відбору (крок, крок, крок, крок);</li>
+            <li>додавання константи.</li>
+        </ul>
+    </div>
+
+    <p></p>
+
+    <p><strong>Текст завдання</strong> (щоб не прокручувати сторінку):</p>
+    <p class="gray-quote">
+        Додати до таблиці <code>buy_book</code> замовлення з номером 5, яке повинно містити:
+        2 примірники книги Пастернака «Лірика» та 1 примірник книги Булгакова «Біла гвардія».
+    </p>
+
+    <p><strong>Увага!</strong> Для кожної книги необхідно виконати окремий запит. Не можна додавати кілька книг одним
+        запитом.</p>
+
+    <p></p>
+
+    <div id="toggle3" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Результат</strong></span></div>
+    </div>
+    <div id="hiddenText3" style="display:none;">
+        <pre class="sqlResultTable">Affected rows: 1
+Affected rows: 1      
++-------------+--------+---------+--------+
+| buy_book_id | buy_id | book_id | amount |
++-------------+--------+---------+--------+
+| 1           | 1      | 1       | 1      |
+| 2           | 1      | 7       | 2      |
+| 3           | 1      | 4       | 1      |
+| 4           | 2      | 8       | 2      |
+| 5           | 3      | 3       | 2      |
+| 6           | 3      | 2       | 1      |
+| 7           | 3      | 1       | 1      |
+| 8           | 4      | 5       | 1      |
+| 9           | 5      | 8       | 2      |
+| 10          | 5      | 2       | 1      |
++-------------+--------+---------+--------+</pre>
+    </div>
+
+    <p></p>
+
+    <div id="toggle4" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Наповнення таблиць</strong></span></div>
+    </div>
+    <div id="hiddenText4" style="display:none;">
+        <div data-img-id="2.4.4.1"></div>
+    </div>
+</div>

@@ -1,0 +1,3 @@
+insert into book (title, author, price, amount)
+
+select title, author, price, amount from supply where author!= 'Булгаков М.А.' and author!= 'Достоевский Ф.М.'

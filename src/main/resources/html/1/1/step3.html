@@ -1,0 +1,79 @@
+<div class="container">
+    <h2>Завдання</h2>
+
+    <p>Внесіть три останні записи до таблиці <code>book</code>, перший запис уже доданий на попередньому кроці:</p>
+
+    <table class="tableSql">
+        <thead>
+        <tr>
+            <th>book_id</th>
+            <th>title</th>
+            <th>author</th>
+            <th>price</th>
+            <th>amount</th>
+        </tr>
+        </thead>
+        <thead>
+        <tr>
+            <th>INT PRIMARY KEY AUTO_INCREMENT</th>
+            <th>VARCHAR(50)</th>
+            <th>VARCHAR(30)</th>
+            <th>DECIMAL(8,2)</th>
+            <th>INT</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>Тіні забутих предків</td>
+            <td>Коцюбинський М.М.</td>
+            <td>410.00</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Кобзар</td>
+            <td>Шевченко Т.Г.</td>
+            <td>520.00</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Маруся</td>
+            <td>Квітка-Основʼяненко Г.Ф.</td>
+            <td>300.00</td>
+            <td>2</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div id="toggle4" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Пояснення</strong> (натисніть на цей рядок, щоб розкрити пояснення)</span>
+        </div>
+    </div>
+    <div id="hiddenText4" style="display:none;">
+        <p>Кожен рядок вставляється окремим SQL-запитом, запити обов’язково розділяти крапкою з комою. Для перегляду
+            отриманої таблиці після запитів на додавання записів вставте:</p>
+
+        <code>SELECT * FROM book;</code>
+    </div>
+
+    <p class="skewed">Результат:</p>
+
+    <pre class="sqlResultTable">Affected rows: 1
+Affected rows: 1
+Affected rows: 1
+Affected rows: 1
+Query result:
++----+----------------------------+----------------------------+--------+--------+
+| id | title                      | author                     | price  | amount |
++----+----------------------------+----------------------------+--------+--------+
+| 1  | Тіні забутих предків       | Коцюбинський М.М.          | 410.00 | 5      |
+| 2  | Кобзар                     | Шевченко Т.Г.              | 520.00 | 10     |
+| 3  | Маруся                     | Квітка-Основʼяненко Г.Ф.   | 300.00 | 2      |
++----+----------------------------+----------------------------+--------+--------+</pre>
+
+    <p><strong>ВАЖЛИВО!</strong> Під час вставки рядків у таблицю не потрібно вказувати значення ключових стовпців (у
+        даному випадку — <code>book_id</code>).</p>
+
+</div>

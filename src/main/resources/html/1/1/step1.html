@@ -1,0 +1,109 @@
+<div class="container">
+    <p class="greenParagraph">На цьому кроці потрібно написати та перевірити SQL-запит. Спочатку коротко описується
+        структура та особливості запиту, наводиться приклад. А потім формулюється завдання, для якого потрібно
+        реалізувати запит.</p>
+    <h2>Створення таблиці</h2>
+    <p>Для створення таблиці використовується SQL-запит. У ньому зазначається, яку таблицю створюють, з яких атрибутів
+        (полів) вона складається та який тип даних має кожне поле. За потреби вказується опис полів (ключове поле тощо).
+        Його структура:</p>
+    <ul style="list-style-type: disc;">
+        <li>ключове слово <code>CREATE TABLE</code></li>
+        <li>ім’я створюваної таблиці</li>
+        <li>відкрита кругла дужка «(»</li>
+        <li>назва поля та його опис, що включає тип поля та інші необов’язкові характеристики</li>
+        <li>кома</li>
+        <li>назва поля та його опис</li>
+        <li>...</li>
+        <li>закрита дужка «)»</li>
+    </ul>
+
+    <p><strong>Приклад.</strong> Створимо таблицю <strong><code class="code-inline">genre</code></strong> такої
+        структури:</p>
+
+    <table class="infoTable">
+        <thead>
+            <tr>
+                <th>
+                    Поле
+                </th>
+                <th>Тип, опис</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>genre_id</td>
+                <td><code class="code-inline">INT PRIMARY KEY AUTO_INCREMENT</code></td>
+            </tr>
+            <tr>
+                <td>name_genre</td>
+                <td><code class="code-inline">VARCHAR(30)</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p class="skewed">Запит:</p>
+
+    <pre class="sqlCodeBlock">CREATE TABLE genre(
+    genre_id INT PRIMARY KEY AUTO_INCREMENT, 
+    name_genre VARCHAR(30)
+);</pre>
+
+    <p>Створена таблиця — порожня.</p>
+
+    <p class="skewed"><strong>Рекомендації щодо запису SQL-запиту</strong></p>
+
+    <ul style="list-style-type: disc;">
+        <li>SQL — нечутлива до регістру мова (наприклад, <code>CREATE</code> і <code>create</code> — одне й те саме
+            ключове слово).</li>
+        <li>Ключові слова SQL та типи даних рекомендується писати великими літерами.</li>
+        <li>Назви таблиць і полів — малими літерами.</li>
+        <li>SQL-запит можна писати на кількох рядках.</li>
+        <li>У кінці SQL-запиту ставиться крапка з комою <code>;</code> (хоча, якщо ви пишете один запит, це не
+            обов’язково).</li>
+    </ul>
+
+    <h2>Завдання</h2>
+
+    <p>Сформулюйте SQL-запит для створення таблиці <code>book</code>, введіть його у вікно коду (розташоване нижче) та
+        натисніть кнопку <strong>Відправити</strong> для перевірки.
+        Структура таблиці <code>book</code>:</p>
+
+    <table class="infoTable">
+        <thead>
+            <tr>
+                <th>Поле</th>
+                <th>Тип, опис</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>book_id</td>
+                <td><code class="code-inline">INT PRIMARY KEY AUTO_INCREMENT</code></td>
+            </tr>
+            <tr>
+                <td>title</td>
+                <td><code class="code-inline">VARCHAR(50)</code></td>
+            </tr>
+            <tr>
+                <td>author</td>
+                <td><code class="code-inline">VARCHAR(30)</code></td>
+            </tr>
+            <tr>
+                <td>price</td>
+                <td><code class="code-inline">DECIMAL(8, 2)</code></td>
+            </tr>
+            <tr>
+                <td>amount</td>
+                <td><code class="code-inline">INT</code></td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <div id="toggle0" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Пояснення</strong></span></div>
+    </div>
+    <div id="hiddenText0" style="display:none;">
+        <p>Під час запису зберігайте порядок слідування полів.</p>
+    </div>
+
+</div>

@@ -1,0 +1,193 @@
+<div class="container">
+
+    <h2>Завдання</h2>
+
+    <p>
+        Придумайте один або кілька запитів для таблиць <code>book</code>, <code>author</code>, <code>genre</code> та
+        <code>city</code>.
+        Перевірте, чи правильно вони працюють.
+    </p>
+
+    <p>
+        За бажанням формулювання запитів можна розмістити у коментарях.
+    </p>
+
+    <p>
+        Розміщені завдання можна використовувати для закріплення матеріалу уроку.
+    </p>
+
+    <p>
+        Оцінюйте ті запити, які вам сподобалися.
+    </p>
+
+    <p>
+        У останньому модулі створено окремий урок, у якому ми розмістимо запити, що набрали найбільшу кількість
+        вподобайок.
+    </p>
+
+    <p><strong>Логічна схема бази даних:</strong></p>
+    <div data-img-id="2.2.4.3"></div>
+
+    <h3>Структура та наповнення таблиць</h3>
+
+    <p><strong>Таблиця <code>author</code>:</strong></p>
+    <table class="tableSql">
+        <thead>
+            <tr>
+                <th>author_id</th>
+                <th>name_author</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Булгаков М.А.</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Достоєвський Ф.М.</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Єсенін С.А.</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Пастернак Б.Л.</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Лермонтов М.Ю.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><strong>Таблиця <code>genre</code>:</strong></p>
+    <table class="tableSql">
+        <thead>
+            <tr>
+                <th>genre_id</th>
+                <th>name_genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Роман</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Поезія</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Пригоди</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><strong>Таблиця <code>book</code>:</strong></p>
+    <table class="tableSql">
+        <thead>
+            <tr>
+                <th>book_id</th>
+                <th>title</th>
+                <th>author_id</th>
+                <th>genre_id</th>
+                <th>price</th>
+                <th>amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Майстер і Маргарита</td>
+                <td>1</td>
+                <td>1</td>
+                <td>670.99</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Біла гвардія</td>
+                <td>1</td>
+                <td>1</td>
+                <td>540.50</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Ідіот</td>
+                <td>2</td>
+                <td>1</td>
+                <td>460.00</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Брати Карамазови</td>
+                <td>2</td>
+                <td>1</td>
+                <td>799.01</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Гравець</td>
+                <td>2</td>
+                <td>1</td>
+                <td>480.50</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Вірші та поеми</td>
+                <td>3</td>
+                <td>2</td>
+                <td>650.00</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Чорна людина</td>
+                <td>3</td>
+                <td>2</td>
+                <td>570.20</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Лірика</td>
+                <td>4</td>
+                <td>2</td>
+                <td>518.99</td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><strong>Таблиця <code>city</code>:</strong></p>
+    <table class="tableSql">
+        <thead>
+            <tr>
+                <th>city_id</th>
+                <th>name_city</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Москва</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Санкт-Петербург</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Владивосток</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

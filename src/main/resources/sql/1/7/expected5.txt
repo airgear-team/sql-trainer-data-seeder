@@ -1,0 +1,11 @@
+update fine, (
+select name, number_plate, violation
+from fine
+group by name, number_plate, violation
+having count(violation)>1
+order by name, number_plate, violation) query_in
+set sum_fine = sum_fine * 2
+where fine.name = query_in.name
+and fine.number_plate = query_in.number_plate
+and fine.violation = query_in.violation
+and date_payment is null;

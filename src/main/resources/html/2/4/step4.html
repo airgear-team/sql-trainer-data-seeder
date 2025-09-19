@@ -1,0 +1,113 @@
+<div class="container">
+    <h2>Запити на основі трьох і більше пов’язаних таблиць</h2>
+
+    <h3>Приклад</h3>
+    <p>
+        Вивести прізвища всіх клієнтів, які замовили книгу Булгакова «Мастер и Маргарита».
+    </p>
+
+    <p class="skewed">Запит:</p>
+    <p>
+        Цей запит будується на основі декількох таблиць, для зручності потрібно визначити фрагмент логічної схеми бази
+        даних, на основі якої будується запит. У нашому випадку обираються назва книги з таблиці <code>book</code> і
+        прізвище клієнта з таблиці <code>client</code>. Ці таблиці безпосередньо між собою не пов’язані, тому потрібно
+        додати «з’єднувальні» таблиці <code>buy</code> і <code>buy_book</code>.
+    </p>
+
+    <p>
+        Для з’єднання цих таблиць використовується <code>INNER JOIN</code>. Для зручності рекомендується описувати
+        зв’язки послідовно: <code>client → buy → buy_book → book</code>. Для з’єднання використовується пара первинного
+        та зовнішнього ключів відповідних таблиць. Наприклад, з’єднання таблиць <code>client</code> і <code>buy</code>
+        здійснюється за умовою <code>client.client_id = buy.client_id</code>.
+    </p>
+
+    <p>
+        Щоб не ускладнювати схему, вважаємо, що нам відомий id Булгакова (це 1).
+    </p>
+
+    <pre class="sqlResultTable">SELECT DISTINCT name_client
+FROM 
+    client 
+    INNER JOIN buy ON client.client_id = buy.client_id
+    INNER JOIN buy_book ON buy_book.buy_id = buy.buy_id
+    INNER JOIN book ON buy_book.book_id = book.book_id
+WHERE title = 'Мастер и Маргарита' AND author_id = 1;
+</pre>
+
+    <p>
+        У запиті обираються унікальні клієнти (<code>DISTINCT</code>), оскільки один і той самий клієнт міг замовити
+        одну й ту саму книгу декілька разів.
+    </p>
+
+    <p class="skewed">Результат:</p>
+    <pre class="sqlResultTable">+---------------+
+| name_client   |
++---------------+
+| Баранов Павел |
+| Абрамова Катя |
++---------------+</pre>
+
+    <h3>Завдання</h3>
+    <p>
+        Вивести всі замовлення Баранова Павла (id замовлення, які книги, за якою ціною і в якій кількості він замовив) у
+        відсортованому за номером замовлення і назвою книг вигляді.
+    </p>
+
+
+
+
+
+    <div id="toggle0" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Пояснення</strong></span></div>
+    </div>
+    <div id="hiddenText0" style="display:none;">
+        <p>
+            Якщо в декількох таблицях стовпці мають однакові назви — необхідно явно вказувати, з якої таблиці береться
+            стовпець. Наприклад, стовпець <code>amount</code> є і в таблиці <code>book</code>, і в таблиці
+            <code>buy_book</code>. У запиті потрібно вказати кількість замовлених книг, тобто
+            <code>buy_book.amount</code>.
+        </p>
+    </div>
+
+    <p></p>
+    <div id="toggle1" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Пов’язані кроки</strong></span></div>
+    </div>
+    <div id="hiddenText1" style="display:none;">
+        <ul>
+            <li>вибірка стовпців;</li>
+            <li>з’єднання таблиць;</li>
+            <li>умова відбору;</li>
+            <li>сортування.</li>
+        </ul>
+    </div>
+
+    <p></p>
+
+    <div id="toggle2" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Результат</strong></span></div>
+    </div>
+    <div id="hiddenText2" style="display:none;">
+        <pre class="sqlResultTable">+--------+--------------------+--------+--------+
+| buy_id | title              | price  | amount |
++--------+--------------------+--------+--------+
+| 1      | Идиот              | 460.00 | 1      |
+| 1      | Мастер и Маргарита | 670.99 | 1      |
+| 1      | Черный человек     | 570.20 | 2      |
+| 4      | Игрок              | 480.50 | 1      |
++--------+--------------------+--------+--------+</pre>
+    </div>
+
+    <p></p>
+
+
+    <div id="toggle3" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Наповнення таблиць</strong></span></div>
+    </div>
+    <div id="hiddenText3" style="display:none;">
+        <div data-img-id="2.4.4.1"></div>
+    </div>
+
+</div>
+
+</div>

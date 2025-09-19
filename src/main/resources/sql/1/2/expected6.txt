@@ -1,0 +1,8 @@
+SELECT author,
+       title,
+       ROUND(
+         IF(author = 'Шевченко Т.Г.', price * 1.10,
+           IF(author = 'Леся Українка', price * 1.05, price)
+         ), 2
+       ) AS new_price
+FROM books;

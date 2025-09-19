@@ -1,0 +1,4 @@
+update book
+set price = price*0.9
+where amount >=5 and amount <=10;
+select * from book;

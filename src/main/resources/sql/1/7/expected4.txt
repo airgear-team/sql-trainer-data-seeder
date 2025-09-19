@@ -1,0 +1,5 @@
+select name, number_plate, violation
+from fine
+group by name, number_plate, violation
+having count(violation)>1
+order by name, number_plate, violation

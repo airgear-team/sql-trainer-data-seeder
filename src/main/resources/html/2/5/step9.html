@@ -1,0 +1,91 @@
+<div class="container">
+    <h2>Завдання</h2>
+
+    <p>
+        Завершити етап <strong>«Оплата»</strong> для замовлення з номером <strong>5</strong>, вставивши у стовпець
+        <code>date_step_end</code> дату <strong>13.04.2020</strong>, та розпочати наступний етап
+        (<strong>«Упаковка»</strong>),
+        вказавши у стовпці <code>date_step_beg</code> для цього етапу ту ж дату.
+    </p>
+
+    <p>
+        Необхідно реалізувати <strong>два запити</strong> — один для завершення поточного етапу, інший — для початку
+        наступного.
+        Запити мають бути універсальними: їх можна буде використати для будь-якого етапу, змінивши тільки назву
+        поточного етапу.
+        Для прикладу використаємо етап <code>«Оплата»</code>.
+    </p>
+
+    <h3>Фрагмент предметної області:</h3>
+    <div data-img-id="2.5.9.1"></div>
+
+    <p></p>
+
+    <div id="toggle2" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Пояснення</strong></span></div>
+    </div>
+    <div id="hiddenText2" style="display:none;">
+        <p>
+            У таблицю <code>step</code> усі необхідні етапи занесено послідовно.
+            Якщо поточний етап — <strong>«Оплата»</strong> (його <code>id = 1</code>),
+            то наступний етап — <strong>«Упаковка»</strong> матиме <code>id = 2</code>.
+            Тому у запиті, що оновлює дату початку наступного етапу, можна використати вкладений запит:
+        </p>
+        <pre class="sqlCodeBlock">SELECT step_id + 1 
+FROM step
+WHERE name_step = 'Оплата'</pre>
+    </div>
+
+    <p></p>
+
+    <div id="toggle0" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Пов’язані кроки</strong></span></div>
+    </div>
+    <div id="hiddenText0" style="display:none;">
+        <ul>
+            <li>оновлення даних;</li>
+            <li>умова відбору (крок, крок, крок);</li>
+            <li>вкладені запити в умовах відбору.</li>
+        </ul>
+    </div>
+
+    <p></p>
+
+    <p><strong>Текст завдання</strong> (щоб не прокручувати сторінку):</p>
+    <p class="gray-quote">
+        Завершити етап <strong>«Оплата»</strong> для замовлення з номером 5, вставивши у стовпець
+        <code>date_step_end</code> дату <strong>13.04.2020</strong>,
+        та розпочати наступний етап <strong>«Упаковка»</strong>, вказавши у стовпці <code>date_step_beg</code> ту ж
+        дату.
+        <br>Реалізувати два універсальних запити, змінюючи тільки назву поточного етапу (у прикладі —
+        <code>'Оплата'</code>).
+    </p>
+
+    <p></p>
+
+    <div id="toggle3" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Результат</strong></span></div>
+    </div>
+    <div id="hiddenText3" style="display:none;">
+        <pre class="sqlResultTable">Affected rows: 1
+
+Affected rows: 1
+
++-------------+--------+---------+---------------+---------------+
+| buy_step_id | buy_id | step_id | date_step_beg | date_step_end |
++-------------+--------+---------+---------------+---------------+
+| 17          | 5      | 1       | 2020-04-12    | 2020-04-13    |
+| 18          | 5      | 2       | 2020-04-13    | NULL          |
+| 20          | 5      | 4       | NULL          | NULL          |
++-------------+--------+---------+---------------+---------------+</pre>
+    </div>
+
+    <p></p>
+
+    <div id="toggle4" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Наповнення таблиць</strong></span></div>
+    </div>
+    <div id="hiddenText4" style="display:none;">
+        <div data-img-id="2.4.4.1"></div>
+    </div>
+</div>

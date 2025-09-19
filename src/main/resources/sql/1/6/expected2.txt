@@ -1,0 +1,4 @@
+select distinct name
+from trip
+where city like 'Москва'
+order by name

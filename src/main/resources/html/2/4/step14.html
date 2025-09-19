@@ -1,0 +1,171 @@
+<div class="container">
+    <h2>Продажі книг за 2019 і 2020 роки</h2>
+
+    <h3>Завдання</h3>
+    <p>
+        Для кожної окремої книги необхідно вивести інформацію про <strong>кількість проданих примірників</strong> і
+        <strong>їх вартість</strong> за <strong>2020</strong> та <strong>2019 роки</strong>. За 2020 рік
+        вважати проданими лише ті примірники, які були <strong>оплачені</strong>.
+    </p>
+    <p>
+        Обчислювані стовпці назвати <strong>Кількість</strong> і <strong>Сума</strong>. Інформацію відсортувати за
+        спаданням значення у стовпці <strong>Сума</strong>.
+    </p>
+
+    <p><strong>Фрагмент логічної схеми бази даних:</strong></p>
+    <div data-img-id="2.4.13.1"></div>
+
+    <p>Інформація про продаж за 2020 міститься в таблицях бази даних (вважаємо, що 2020 - поточний рік). Інформація про
+        продаж 2019 року (тобто умовно минулого року) зберігається в таблиці buy_archive наступної структури:</p>
+
+    <div data-img-id="2.4.14.2"></div>
+
+
+    <p></p>
+
+    <div id="toggle2" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Пояснення</strong></span></div>
+    </div>
+    <div id="hiddenText2" style="display:none;">
+
+        <p>
+            Запити з <code>UNION</code> можна використовувати як вкладені — це дозволяє обробляти дані з об’єднаних
+            запитів спільно.
+        </p>
+
+        <h3>Приклад</h3>
+
+        <p>
+            Вивести клієнтів, які робили покупки в попередньому році, але не робили в поточному. А також нових клієнтів,
+            які здійснювали замовлення тільки в поточному році. Інформацію відсортувати за зростанням років.
+        </p>
+
+        <h3>Крок 1</h3>
+        <p>
+            Відіберемо клієнтів попереднього року, вказавши дату їхньої найпершої оплати, а також клієнтів поточного
+            року, вказавши для них найранішу дату оплати (завершення етапу оплати) замовлення.
+        </p>
+
+        <p class="skewed"><strong>Запит:</strong></p>
+        <pre class="sqlCodeBlock">SELECT name_client, MIN(date_payment) AS first_payment
+FROM 
+    buy_archive 
+    INNER JOIN client USING(client_id)
+GROUP BY name_client
+UNION
+SELECT name_client, MIN(date_step_end)
+FROM 
+    buy 
+    INNER JOIN client USING(client_id)
+    INNER JOIN buy_step USING(buy_id)
+GROUP BY name_client;</pre>
+
+        <p class="skewed">Результат:</p>
+        <pre class="sqlResultTable">+-----------------+---------------+
+| name_client     | first_payment |
++-----------------+---------------+
+| Абрамова Катя   | 2019-02-10    |
+| Баранов Павел   | 2019-02-21    |
+| Яковлева Галина | 2019-03-05    |
+| Абрамова Катя   | 2020-03-05    |
+| Баранов Павел   | 2020-02-20    |
+| Семенонов Иван  | 2020-02-28    |
++-----------------+---------------+</pre>
+
+        <p>
+            Як видно з таблиці, деякі клієнти робили покупки і в попередньому, і в поточному році — вони зустрічаються 2
+            рази.
+        </p>
+
+        <h3>Крок 2</h3>
+        <p>
+            Залишимо лише тих клієнтів, які з’являються в отриманій сукупній таблиці один раз. Для цього використаємо
+            попередній запит як вкладений.
+        </p>
+
+        <p class="skewed">Запит:</p>
+        <pre class="sqlCodeBlock">SELECT name_client, MIN(YEAR(first_payment)) AS Год
+FROM
+(
+    SELECT name_client, MIN(date_payment) AS first_payment
+    FROM 
+        buy_archive 
+        INNER JOIN client USING(client_id)
+    GROUP BY name_client
+    UNION
+    SELECT name_client, MIN(date_step_end)
+    FROM 
+        buy 
+        INNER JOIN client USING(client_id)
+        INNER JOIN buy_step USING(buy_id)
+    GROUP BY name_client
+) query_in
+GROUP BY name_client
+HAVING COUNT(*) = 1
+ORDER BY 2;</pre>
+
+        <p class="skewed">Результат:</p>
+        <pre class="sqlResultTable">+-----------------+------+
+| name_client     | Год  |
++-----------------+------+
+| Яковлева Галина | 2019 |
+| Семенонов Иван  | 2020 |
++-----------------+------+</pre>
+    </div>
+
+    <p></p>
+
+    <div id="toggle0" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Пов’язані кроки</strong></span></div>
+    </div>
+    <div id="hiddenText0" style="display:none;">
+        <ul>
+            <li>вибірка стовпців і їх перейменування;</li>
+            <li>з’єднання таблиць;</li>
+            <li>групові функції (SUM, COUNT);</li>
+            <li>використання UNION для об’єднання записів;</li>
+            <li>фільтрація записів по роках;</li>
+            <li>сортування результатів.</li>
+        </ul>
+    </div>
+
+    <p></p>
+
+    <p><strong>Текст завдання</strong> (щоб не прокручувати сторінку):</p>
+    <p class="gray-quote">
+        Для кожної окремої книги необхідно вивести інформацію про <strong>кількість проданих примірників</strong> і
+        <strong>їх вартість</strong> за <strong>2020</strong> та <strong>2019 роки</strong>. За 2020 рік
+        вважати проданими лише ті примірники, які були <strong>оплачені</strong>.
+        Обчислювані стовпці назвати <strong>Кількість</strong> і <strong>Сума</strong>. Інформацію відсортувати за
+        спаданням вартості.
+    </p>
+
+    <p></p>
+
+    <div id="toggle3" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Результат</strong></span></div>
+    </div>
+    <div id="hiddenText3" style="display:none;">
+        <pre class="sqlResultTable">+-----------------------+------------+---------+
+| title                 | Кількість | Сума    |
++-----------------------+------------+---------+
+| Брати Карамазови      | 8          | 6247.20 |
+| Майстер і Маргарита   | 6          | 4024.38 |
+| Ідіот                 | 5          | 2281.80 |
+| Біла гвардія          | 3          | 1581.10 |
+| Чорна людина          | 2          | 1140.40 |
+| Лірика                | 2          | 1037.98 |
+| Гравець               | 2          | 961.80  |
+| Вірші та поеми        | 1          | 650.00  |
++-----------------------+------------+---------+</pre>
+    </div>
+
+    <p></p>
+
+    <div id="toggle4" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Наповнення таблиць</strong></span></div>
+    </div>
+    <div id="hiddenText4" style="display:none;">
+        <div data-img-id="2.4.4.1"></div>
+    </div>
+</div>

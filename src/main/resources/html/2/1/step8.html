@@ -1,0 +1,58 @@
+<div class="container">
+  <h2>Дії при видаленні запису головної таблиці</h2>
+
+  <p>За допомогою конструкції <code>ON DELETE</code> можна встановити, які дії виконуються з записами залежної таблиці
+    при видаленні пов’язаного запису з головної таблиці. Можливі наступні опції:</p>
+
+  <ul style="list-style-type: disc;">
+    <li><code>CASCADE</code>: автоматично видаляє пов’язані записи із залежної таблиці при видаленні запису в головній
+      таблиці.</li>
+    <li><code>SET NULL</code>: встановлює <code>NULL</code> у зовнішньому ключі залежної таблиці при видаленні
+      пов’язаного запису з головної таблиці (при цьому поле повинно допускати <code>NULL</code>).</li>
+    <li><code>SET DEFAULT</code>: схоже на <code>SET NULL</code>, але встановлює значення за замовчуванням замість
+      <code>NULL</code>.
+    </li>
+    <li><code>RESTRICT</code>: забороняє видалення записів у головній таблиці, якщо існують пов’язані записи в залежній
+      таблиці.</li>
+  </ul>
+
+  <p><strong>Увага!</strong> Якщо використовується <code>SET NULL</code>, то для відповідного поля не можна вказувати
+    обмеження <code>NOT NULL</code>.</p>
+
+  <h2>Приклад</h2>
+  <p>
+    Припустимо, при видаленні автора з таблиці <code>author</code> потрібно автоматично видалити всі книги з таблиці
+    <code>book</code>, написані цим автором.
+  </p>
+
+  <p class="skewed">Запит:</p>
+  <pre class="sqlCodeBlock">
+CREATE TABLE book (
+    book_id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(50),
+    author_id INT NOT NULL,
+    price DECIMAL(8,2),
+    amount INT,
+    FOREIGN KEY (author_id) REFERENCES author(author_id) ON DELETE CASCADE
+);
+</pre>
+
+  <h2>Завдання</h2>
+
+  <p>
+    Створіть таблицю <code>book</code> з тією ж структурою, що й на попередньому кроці. Вважатимемо, що при видаленні
+    автора з таблиці <code>author</code> мають автоматично видалятися всі записи про книги з таблиці <code>book</code>,
+    написані цим автором. А при видаленні жанру з таблиці <code>genre</code>, для відповідного запису в
+    <code>book</code> у стовпці <code>genre_id</code> потрібно встановити значення <code>NULL</code>.
+  </p>
+
+  <p></p>
+
+  <div id="toggle2" style="cursor: pointer;">
+    <div><span class="arrow-text"><strong>Результат</strong></span></div>
+  </div>
+
+  <div id="hiddenText2" style="display:none;">
+    <pre class="sqlResultTable">Affected rows: 0</pre>
+  </div>
+</div>

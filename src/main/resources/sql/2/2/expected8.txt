@@ -1,0 +1,4 @@
+select book.title as 'Название', supply.author as 'Автор', supply.amount+book.amount as 'Количество'
+from book
+inner join supply using(title)
+where book.price = supply.price

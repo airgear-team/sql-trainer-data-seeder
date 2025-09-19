@@ -1,0 +1,6 @@
+select name_genre, title, name_author
+from book
+inner join author on book.author_id =author.author_id
+inner join genre on book.genre_id = genre.genre_id
+where name_genre = 'Роман'
+order by title

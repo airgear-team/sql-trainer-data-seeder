@@ -1,0 +1,6 @@
+select name_author, sum(amount) as 'Количество'
+from book
+right join author on book.author_id = author.author_id
+group by name_author
+having sum(amount) < 10 or Количество is null
+order by Количество

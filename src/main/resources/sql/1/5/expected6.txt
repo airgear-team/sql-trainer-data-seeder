@@ -1,0 +1,6 @@
+update book
+set buy = buy - (buy-amount)
+where buy>amount;
+update book
+set price = price * 0.9
+where buy = 0;

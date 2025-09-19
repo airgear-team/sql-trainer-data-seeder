@@ -1,0 +1,84 @@
+<div class="container">
+    <h2>Завдання</h2>
+
+    <p>
+        Включити нового клієнта в таблицю з клієнтами. Його ім’я — <strong>Попов Ілля</strong>, email —
+        <strong>popov@test</strong>, проживає в місті
+        <strong>Харків</strong>.
+    </p>
+
+    <h3>Фрагмент логічної схеми бази даних:</h3>
+    <div data-img-id="2.5.1.1"></div>
+
+    <p></p>
+
+    <div id="toggle2" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Пояснення</strong></span></div>
+    </div>
+    <div id="hiddenText2" style="display:none;">
+        <p>
+            1. У запитах на додавання (<code>INSERT</code>) можна одночасно використовувати як константи, так і дані з
+            інших таблиць.
+            Наприклад, щоб вставити новий запис із константами та ID міста з таблиці <code>city</code>, можна написати:
+        </p>
+
+        <pre class="sqlCodeBlock">INSERT INTO ...
+SELECT 'Попов Ілля', city_id, 'popov@test'
+FROM city
+WHERE ...;</pre>
+
+        <p>
+            2. Щоб переглянути таблицю, до якої було додано новий запис, використовуйте запит:
+        </p>
+
+        <pre class="sqlCodeBlock">SELECT * FROM client;</pre>
+    </div>
+
+    <p></p>
+
+    <div id="toggle0" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Пов’язані кроки</strong></span></div>
+    </div>
+    <div id="hiddenText0" style="display:none;">
+        <ul>
+            <li>додавання записів;</li>
+            <li>умова відбору (крок, крок).</li>
+        </ul>
+    </div>
+
+
+    <p></p>
+
+    <p><strong>Текст завдання</strong> (щоб не прокручувати сторінку):</p>
+    <p class="gray-quote">
+        Включити нового клієнта в таблицю з клієнтами. Його ім’я — Попов Ілля, email — popov@test, проживає в місті
+        Москва.
+    </p>
+
+    <p></p>
+
+    <div id="toggle3" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Результат</strong></span></div>
+    </div>
+    <div id="hiddenText3" style="display:none;">
+        <p>Affected rows: 1</p>
+        <pre class="sqlResultTable">+-----------+-----------------+---------+----------------+
+| client_id | name_client     | city_id | email          |
++-----------+-----------------+---------+----------------+
+| 1         | Баранов Павло   | 3       | baranov@test   |
+| 2         | Абрамова Катя   | 1       | abramova@test  |
+| 3         | Семенов Іван    | 2       | semenov@test   |
+| 4         | Яковлєва Галина | 1       | yakovleva@test |
+| 5         | Попов Ілля      | 1       | popov@test     |
++-----------+-----------------+---------+----------------+</pre>
+    </div>
+
+    <p></p>
+
+    <div id="toggle4" style="cursor: pointer;">
+        <div><span class="arrow-text"><strong>Наповнення таблиць</strong></span></div>
+    </div>
+    <div id="hiddenText4" style="display:none;">
+        <div data-img-id="2.4.4.1"></div>
+    </div>
+</div>

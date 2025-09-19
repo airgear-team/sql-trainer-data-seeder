@@ -1,0 +1,100 @@
+<div class="container">
+    <h2>Вибір унікальних значень зі стовпця</h2>
+
+    <p>Щоб отримати унікальні значення певного стовпця, використовується ключове слово <code>DISTINCT</code>, яке
+        розміщується відразу після <code>SELECT</code>.</p>
+
+  <p><strong>Приклад</strong></p>
+    <p>Вибрати різних авторів, книги яких зберігаються в таблиці <code>book</code>.</p>
+
+    <p class="skewed">Запит:</p>
+    <pre class="sqlCodeBlock">SELECT DISTINCT author
+FROM book;</pre>
+
+    <p class="skewed">Результат:</p>
+    <pre class="sqlResultTable">+------------------+
+| author           |
++------------------+
+| Булгаков М.А.    |
+| Достоєвський Ф.М.|
+| Єсенін С.А.      |
++------------------+</pre>
+
+    <p>Інший спосіб — використання оператора <code>GROUP BY</code>, який групує записи з однаковими значеннями у
+        вказаному стовпці. Стовпець, за яким проводиться групування, вказується після <code>GROUP BY</code>.</p>
+
+    <p>Завдяки <code>GROUP BY</code> можна також отримати унікальні значення — результат буде аналогічний як при
+        використанні <code>DISTINCT</code>.</p>
+
+    <p class="skewed">Запит:</p>
+    <pre class="sqlCodeBlock">SELECT author
+FROM book
+GROUP BY author;</pre>
+
+    <h3>Завдання</h3>
+
+    <p>Вибрати різні (унікальні) значення стовпця <code>amount</code> з таблиці <code>book</code>.</p>
+
+    <div id="toggle1" style="cursor:pointer; user-select:none;" onclick="
+  const hiddenText1 = this.nextElementSibling; 
+  const arrowText1 = this.querySelector('.arrow-text');
+  if(hiddenText1.style.display === 'block'){
+    hiddenText1.style.display = 'none'; 
+    arrowText1.innerHTML = '<strong>Результат</strong>';
+  } else {
+    hiddenText1.style.display = 'block'; 
+    arrowText1.innerHTML = '<strong>Результат</strong>';
+  }
+">
+        <div>
+            <span class="arrow-text">
+                <strong>
+                    Результат
+                    <span class="green">(Спробуйте розв'язати завдання без відомого результату, якщо не вийде — розкрийте його)</span>
+                </strong>
+            </span>
+        </div>
+    </div>
+
+    <div id="hiddenText1" style="display:none;">
+        
+        <pre class="sqlResultTable">+--------+
+| amount |
++--------+
+| 3      |
+| 5      |
+| 10     |
+| 15     |
++--------+</pre>
+    </div>
+    <p></p>
+
+    <div id="toggle" style="cursor:pointer; user-select:none;" onclick="
+    const hiddenText = this.nextElementSibling; 
+    const arrowText = this.querySelector('.arrow-text');
+    if(hiddenText.style.display === 'block'){
+      hiddenText.style.display = 'none'; 
+      arrowText.innerHTML = '<strong>Структура та вміст таблиці</strong> <code>book</code>';
+    } else {
+      hiddenText.style.display = 'block'; 
+      arrowText.innerHTML = '<strong>Структура та вміст таблиці</strong> <code>book</code>';
+    }
+  ">
+        <div>
+            <span class="arrow-text"><strong>Структура та вміст таблиці</strong> <code>book</code></span>
+        </div>
+    </div>
+
+    <div id="hiddenText" style="display:none;">
+        <pre class="sqlResultTable">+---------+-----------------------+------------------+--------+--------+
+| book_id | title                 | author           | price  | amount |
++---------+-----------------------+------------------+--------+--------+
+| 1       | Мастер и Маргарита    | Булгаков М.А.    | 670.99 | 3      |
+| 2       | Белая гвардия         | Булгаков М.А.    | 540.50 | 5      |
+| 3       | Идиот                 | Достоєвський Ф.М.| 460.00 | 10     |
+| 4       | Братья Карамазовы     | Достоєвський Ф.М.| 799.01 | 3      |
+| 5       | Игрок                 | Достоєвський Ф.М.| 480.50 | 10     |
+| 6       | Стихотворения и поэмы | Єсенін С.А.      | 650.00 | 15     |
++---------+-----------------------+------------------+--------+--------+</pre>
+    </div>
+</div>

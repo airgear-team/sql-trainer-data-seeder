@@ -1,0 +1,1 @@
+select author,title, price from book where price < ANY(select min(price) from book GROUP BY author)

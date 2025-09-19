@@ -1,0 +1,5 @@
+select name_genre
+from genre
+left join book
+on book.genre_id = genre.genre_id
+where book_id is null

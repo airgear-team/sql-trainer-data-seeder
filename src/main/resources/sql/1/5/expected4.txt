@@ -1,0 +1,4 @@
+insert into book (title, author, price, amount)
+SELECT title, author, price, amount
+FROM supply
+where author NOT IN (select author from book);

@@ -1,0 +1,6 @@
+select author, sum(price*amount) as 'Стоимость'
+from book
+where title <> 'Идиот' AND title <> 'Белая гвардия'
+group by author
+having sum(price* amount)>5000
+order by Стоимость desc

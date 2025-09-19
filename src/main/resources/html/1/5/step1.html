@@ -1,0 +1,38 @@
+<div class="container">
+  <h3>Створення пустої таблиці</h3>
+  <p>Створення таблиці здійснюється за допомогою запиту <code>CREATE</code>, детально розглянутого в першому уроці модуля.</p>
+
+  <h3>Завдання</h3>
+  <p>Створити таблицю поставок (<code>supply</code>), яка має таку саму структуру, що і таблиця <code>book</code>.</p>
+
+  <table class="infoTable">
+    <thead>
+      <tr>
+        <th>Поле</th>
+        <th>Тип, опис</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>supply_id</td>
+        <td>INT PRIMARY KEY AUTO_INCREMENT</td>
+      </tr>
+      <tr>
+        <td>title</td>
+        <td>VARCHAR(50)</td>
+      </tr>
+      <tr>
+        <td>author</td>
+        <td>VARCHAR(30)</td>
+      </tr>
+      <tr>
+        <td>price</td>
+        <td>DECIMAL(8, 2)</td>
+      </tr>
+      <tr>
+        <td>amount</td>
+        <td>INT</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,25 @@
+UPDATE
+    fine f
+JOIN
+    payment p
+ON
+    f.name = p.name
+    AND f.number_plate = p.number_plate
+    AND f.violation = p.violation
+    AND f.date_violation = p.date_violation
+SET
+    f.date_payment = p.date_payment;
+
+UPDATE
+    fine f
+JOIN
+    payment p
+ON
+    f.name = p.name
+    AND f.number_plate = p.number_plate
+    AND f.violation = p.violation
+    AND f.date_violation = p.date_violation
+SET
+    f.sum_fine = f.sum_fine / 2
+WHERE
+    DATEDIFF(p.date_payment, f.date_violation) <= 20;

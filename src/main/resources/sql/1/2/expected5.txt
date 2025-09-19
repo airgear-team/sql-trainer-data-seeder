@@ -1,0 +1,1 @@
+select title, author, amount, round((price/100) * 70, 2) as new_price from book;
