@@ -1,1 +1,4 @@
-select round(min(price), 2) as 'Минимальная_цена', round(max(price), 2) as 'Максимальная_цена', round(avg(price), 2) as 'Средняя_цена' from book
+SELECT MIN(price) AS Мінімальна_ціна,
+       MAX(price) AS Максимальна_ціна,
+       ROUND(AVG(price), 2) AS Середня_ціна
+FROM book;

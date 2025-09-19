@@ -1,6 +1,5 @@
-select
-round(avg(price), 2) as 'Средняя_цена',
-round(sum(price*amount), 2) as 'Стоимость'
-from book
-
-where amount>4 and amount <15
+SELECT 
+    ROUND(AVG(price), 2) AS Середня_ціна,
+    ROUND(SUM(price * amount), 2) AS Вартість
+FROM book
+WHERE amount BETWEEN 5 AND 14;

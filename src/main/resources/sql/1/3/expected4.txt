@@ -1,7 +1,7 @@
-select author,
-sum(round(amount*price, 2)) as 'Стоимость',
-sum(round(((amount*price) * 0.18) / (1 + 0.18) ,2)) as 'НДС',
-sum(round(((amount*price)) - ((amount*price) * 0.18) / (1 + 0.18) ,2)) as 'Стоимость_без_НДС'
-from book
-group by author
-
+SELECT
+    author,
+    ROUND(SUM(price * amount), 2) AS Вартість,
+    ROUND(SUM(price * amount) * 18 / 118, 2) AS ПДВ,
+    ROUND(SUM(price * amount) - SUM(price * amount) * 18 / 118, 2) AS Вартість_без_ПДВ
+FROM book
+GROUP BY author;
