@@ -1,1 +1,2 @@
-insert into book values(1,'Кайдашева сімʼя', 'Нечуй-Левицький І.С.', 320.50, 3);
+INSERT INTO book (title, author, price, amount)
+VALUES ('Intermezzo', 'Коцюбинський М.М.', 540.50, 5);

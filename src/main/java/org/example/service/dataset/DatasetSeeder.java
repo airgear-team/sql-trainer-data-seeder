@@ -22,20 +22,20 @@ public class DatasetSeeder {
     public static void seedBookDataset1() {
         CreateDatasetRequest request = new CreateDatasetRequest(
                 "Дані для таблиці book перший модуль, перший урок, третій крок",
-                "insert into book values(1,'Кайдашева сімʼя', 'Нечуй-Левицький І.С.', 320.50, 3);"
+                "insert into book values(1, 'Тіні забутих предків', 'Коцюбинський М.М.', 670.99, 3);"
         );
         postDataset(request);
     }
 
     public static void seedBookDataset2() {
         CreateDatasetRequest request = new CreateDatasetRequest(
-                "Дані для таблиці book другий модуль",
+                "Дані для таблиці book третій модуль",
                 "INSERT INTO book (title, author, price, amount) VALUES\n" +
-                        "('Кайдашева сімʼя',  'Нечуй-Левицький І.С.', 320.50, 3),\n" +
-                        "('Тіні забутих предків', 'Коцюбинський М.М.', 410.00, 5),\n" +
-                        "('Кобзар', 'Шевченко Т.Г.', 520.00, 10),\n" +
-                        "('Маруся', 'Квітка-Основʼяненко Г.Ф.', 300.00, 2),\n" +
-                        "('Лісова пісня', 'Леся Українка', 450.00, 7);\n"
+                        "('Тіні забутих предків', 'Коцюбинський М.М.', 670.99, 3),\n" +
+                        "('Intermezzo', 'Коцюбинський М.М.', 540.50, 5),\n" +
+                        "('Кайдашева сім’я', 'Нечуй-Левицький І.С.', 460.00, 10),\n" +
+                        "('Хмари', 'Нечуй-Левицький І.С.', 799.01, 2),\n" +
+                        "('Земля', 'Кобилянська О.Ю.', 650.00, 15);\n"
         );
         postDataset(request);
     }

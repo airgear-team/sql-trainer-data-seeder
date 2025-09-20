@@ -1,4 +1,6 @@
-insert into book(title, author, price, amount) values
-('Тіні забутих предків', 'Коцюбинський М.М.', 410.00, 5),
-('Кобзар', 'Шевченко Т.Г.', 520.00, 10),
-('Маруся', 'Квітка-Основʼяненко Г.Ф.', 300.00, 2);
+INSERT INTO book (title, author, price, amount)
+VALUES ('Кайдашева сім’я', 'Нечуй-Левицький І.С.', 460.00, 10);
+INSERT INTO book (title, author, price, amount)
+VALUES ('Хмари', 'Нечуй-Левицький І.С.', 799.01, 2);
+INSERT INTO book (title, author, price, amount)
+VALUES ('Земля', 'Кобилянська О.Ю.', 650.00, 15);
