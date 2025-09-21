@@ -17,7 +17,7 @@
   <p class="skewed">Запит:</p>
   <pre class="sqlCodeBlock">SELECT title, amount, price,
        IF(amount &lt; 4, price * 0.5, price * 0.7) AS sale
-FROM books;</pre>
+FROM book;</pre>
 
   <p class="skewed">Результат:</p>
   <pre class="sqlResultTable">+--------------------------+--------+--------+--------+
@@ -35,7 +35,7 @@ FROM books;</pre>
   <p class="skewed">Запит:</p>
   <pre class="sqlCodeBlock">SELECT title, amount, price,
        ROUND(IF(amount &lt; 4, price * 0.5, price * 0.7), 2) AS sale
-FROM books;</pre>
+FROM book;</pre>
 
   <p class="skewed">Результат:</p>
   <pre class="sqlResultTable">+--------------------------+--------+--------+--------+
@@ -63,7 +63,7 @@ FROM books;</pre>
        IF(amount &lt; 4, 'знижка 50%',
          IF(amount &lt; 11, 'знижка 30%', 'знижка 10%')
        ) AS Ваша_знижка
-FROM books;</pre>
+FROM book;</pre>
 
   <p class="skewed">Результат:</p>
   <pre class="sqlResultTable">+--------------------------+--------+--------+--------+-------------+
@@ -95,7 +95,7 @@ FROM books;</pre>
 
   <div id="toggle">
     <div>
-      <span class="arrow-text"><strong>Структура та вміст таблиці</strong> <code>books</code></span>
+      <span class="arrow-text"><strong>Структура та вміст таблиці</strong> <code>book</code></span>
     </div>
   </div>
   <div id="hiddenText">

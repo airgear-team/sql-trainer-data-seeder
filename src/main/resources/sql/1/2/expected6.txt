@@ -4,4 +4,4 @@ SELECT author, title,
            IF(author = 'Нечуй-Левицький І.С.', price * 1.05, price)
          ), 2
        ) AS new_price
-FROM books;
+FROM book;

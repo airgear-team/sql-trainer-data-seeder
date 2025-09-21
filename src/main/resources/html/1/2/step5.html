@@ -88,7 +88,7 @@
   <pre class="sqlCodeBlock">SELECT title, price,
        (price*18/100)/(1+18/100) AS tax,
        price/(1+18/100) AS price_tax
-FROM books;</pre>
+FROM book;</pre>
 
   <p class="skewed">Результат:</p>
   <pre class="sqlResultTable">+--------------------------+--------+----------------+------------+
@@ -109,7 +109,7 @@ FROM books;</pre>
        price,
        ROUND((price*18/100)/(1+18/100), 2) AS tax,
        ROUND(price/(1+18/100), 2) AS price_tax
-FROM books;</pre>
+FROM book;</pre>
 
   <p><strong>Результат:</strong></p>
   <pre class="sqlResultTable">+--------------------------+--------+--------+-----------+
@@ -124,7 +124,7 @@ FROM books;</pre>
 
   <h2>Завдання</h2>
   <p>Наприкінці року ціну кожної книги на складі перераховують — знижують її на 30%.
-    Напишіть SQL-запит, який з таблиці <code>books</code> вибирає назви, авторів, кількість і обчислює нові ціни книг.
+    Напишіть SQL-запит, який з таблиці <code>book</code> вибирає назви, авторів, кількість і обчислює нові ціни книг.
     Стовпець з новою ціною назвати <code>new_price</code>, ціну округлити до 2 знаків після коми.
   </p>
 
@@ -141,7 +141,7 @@ FROM books;</pre>
 
   <div id="toggle">
     <div>
-      <span class="arrow-text"><strong>Структура та вміст таблиці</strong> <code>books</code></span>
+      <span class="arrow-text"><strong>Структура та вміст таблиці</strong> <code>book</code></span>
     </div>
   </div>
   <div id="hiddenText">

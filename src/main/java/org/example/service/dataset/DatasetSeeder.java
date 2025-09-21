@@ -22,7 +22,7 @@ public class DatasetSeeder {
     public static void seedBookDataset1() {
         CreateDatasetRequest request = new CreateDatasetRequest(
                 "Дані для таблиці book перший модуль, перший урок, третій крок",
-                "insert into book values(1, 'Тіні забутих предків', 'Коцюбинський М.М.', 670.99, 3);"
+                "INSERT INTO book (title, author, price, amount) VALUES ('Тіні забутих предків', 'Коцюбинський М.М.', 670.99, 3);"
         );
         postDataset(request);
     }
