@@ -1,1 +1,5 @@
-select title, author from book where title like "_% %" and author like "% %С.%" order by title
+SELECT title, author
+FROM book
+WHERE title LIKE '% %'
+  AND author LIKE '%М%'
+ORDER BY title ASC;

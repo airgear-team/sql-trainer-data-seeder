@@ -1,1 +1,4 @@
-select author, title from book where amount between 2 and 14 order by author desc, title
+SELECT author, title
+FROM book
+WHERE amount BETWEEN 2 AND 14
+ORDER BY author DESC, title ASC;
