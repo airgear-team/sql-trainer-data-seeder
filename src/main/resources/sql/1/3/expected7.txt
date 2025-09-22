@@ -1,7 +1,8 @@
-SELECT author,
-       SUM(price * amount) AS Вартість
+SELECT
+    author,
+    SUM(price * amount) AS Вартість
 FROM book
-WHERE title NOT IN ('Маруся', 'Кайдашева сімʼя')
+WHERE title <> 'Кайдашева сім’я'
 GROUP BY author
 HAVING SUM(price * amount) > 5000
 ORDER BY Вартість DESC;
