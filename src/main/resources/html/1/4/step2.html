@@ -19,8 +19,7 @@ WHERE ABS(amount - (SELECT AVG(amount) FROM book)) > 3;</pre>
 
   <p class="skewed">Результат:</p>
 
-  <pre class="sqlResultTable">Affected rows: 3
-+----------------------+----------------------+--------+
+  <pre class="sqlResultTable">+----------------------+----------------------+--------+
 | title                | author               | amount |
 +----------------------+----------------------+--------+
 | Тіні забутих предків | Коцюбинський М.М.    | 3      |
@@ -42,8 +41,7 @@ WHERE ABS(amount - (SELECT AVG(amount) FROM book)) > 3;</pre>
   </div>
 
   <div id="hiddenText2" style="display:none;">
-    <pre class="sqlResultTable">Affected rows: 3
-+----------------------+-----------------+-------+
+    <pre class="sqlResultTable">+----------------------+-----------------+-------+
 | author               | title           | price |
 +----------------------+-----------------+-------+
 | Нечуй-Левицький І.С. | Кайдашева сім’я | 460   |

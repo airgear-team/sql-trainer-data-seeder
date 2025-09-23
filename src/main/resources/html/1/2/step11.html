@@ -40,8 +40,7 @@ FROM book
 WHERE title LIKE 'К%';</pre>
 
   <p class="skewed">Результат:</p>
-  <pre class="sqlResultTable">Affected rows: 1
-+-----------------+
+  <pre class="sqlResultTable">+-----------------+
 | title           |
 +-----------------+
 | Кайдашева сім’я |
@@ -55,8 +54,7 @@ WHERE title LIKE 'К%';</pre>
 WHERE title LIKE "_____";</pre>
 
   <p class="skewed">Результат:</p>
-  <pre class="sqlResultTable">Affected rows: 2
-+-------+
+  <pre class="sqlResultTable">+-------+
 | title |
 +-------+
 | Хмари |
@@ -71,8 +69,7 @@ WHERE title LIKE "_____";</pre>
 WHERE title LIKE "______%";</pre>
 
   <p class="skewed">Результат:</p>
-  <pre class="sqlResultTable">Affected rows: 3
-+----------------------+
+  <pre class="sqlResultTable">+----------------------+
 | title                |
 +----------------------+
 | Тіні забутих предків |
@@ -119,8 +116,7 @@ WHERE   title LIKE "%і%";</pre>
 WHERE title NOT LIKE "% %";</pre>
 
   <p class="skewed">Результат:</p>
-  <pre class="sqlResultTable">Affected rows: 3
-+------------+
+  <pre class="sqlResultTable">+------------+
 | title      |
 +------------+
 | Intermezzo |
@@ -132,8 +128,7 @@ WHERE title NOT LIKE "% %";</pre>
   <p>Вивести назву і автора тих книг, назва яких складається з двох і більше слів, а ініціали автора містять літеру «М». Інформацію відсортувати за назвою книги в алфавітному порядку.</p>
 
   <p class="skewed">Результат:</p>
-  <pre class="sqlResultTable">Affected rows: 1
-+----------------------+-------------------+
+  <pre class="sqlResultTable">+----------------------+-------------------+
 | title                | author            |
 +----------------------+-------------------+
 | Тіні забутих предків | Коцюбинський М.М. |
