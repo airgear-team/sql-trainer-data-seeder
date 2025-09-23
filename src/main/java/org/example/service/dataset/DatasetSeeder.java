@@ -42,6 +42,20 @@ public class DatasetSeeder {
 
     public static void seedBookDataset3() {
         CreateDatasetRequest request = new CreateDatasetRequest(
+                "Дані для таблиці book третій модуль",
+                "INSERT INTO book (title, author, price, amount) VALUES\n" +
+                        "('Тіні забутих предків', 'Коцюбинський М.М.', 670.99, 3),\n" +
+                        "('Intermezzo', 'Коцюбинський М.М.', 540.50, 5),\n" +
+                        "('Кайдашева сім’я', 'Нечуй-Левицький І.С.', 460.00, 10),\n" +
+                        "('Хмари', 'Нечуй-Левицький І.С.', 799.01, 2),\n" +
+                        "('Земля', 'Кобилянська О.Ю.', 650.00, 15),\n" +
+                        "('Нове життя', 'Петренко П.П.', 480.50, 10);\n"
+        );
+        postDataset(request);
+    }
+
+    public static void seedBookDataset4() {
+        CreateDatasetRequest request = new CreateDatasetRequest(
                 "Дані для таблиці book та supply ",
                 "INSERT INTO books (book_id, title, author, price, amount) VALUES\n" +
                         "(1, 'Кайдашева сімʼя', 'Нечуй-Левицький І.С.', 320.50, 3),\n" +
@@ -59,7 +73,7 @@ public class DatasetSeeder {
         postDataset(request);
     }
 
-    public static void seedBookDataset4() {
+    public static void seedBookDataset5() {
         CreateDatasetRequest request = new CreateDatasetRequest(
                 "Дані для таблиці book",
                 "INSERT INTO books (book_id, title, author, price, amount, buy) VALUES\n" +
@@ -72,7 +86,7 @@ public class DatasetSeeder {
         postDataset(request);
     }
 
-    public static void seedBookDataset5() {
+    public static void seedBookDataset6() {
         CreateDatasetRequest request = new CreateDatasetRequest(
                 "Дані для таблиці trip",
                 "INSERT INTO trip (name, city, per_diem, date_first, date_last) VALUES\n" +
@@ -86,7 +100,7 @@ public class DatasetSeeder {
         postDataset(request);
     }
 
-    public static void seedBookDataset6() {
+    public static void seedBookDataset7() {
         CreateDatasetRequest request = new CreateDatasetRequest(
                 "Дані для таблиці fine",
                 "INSERT INTO fines (name, number_plate, violation, sum_fine, date_violation, date_payment) VALUES\n" +
@@ -98,7 +112,7 @@ public class DatasetSeeder {
         postDataset(request);
     }
 
-    public static void seedBookDataset7() {
+    public static void seedBookDataset8() {
         CreateDatasetRequest request = new CreateDatasetRequest(
                 "Дані для таблиці traffic_violation",
                 "INSERT INTO traffic_violation (violation, sum_fine) VALUES\n" +
@@ -113,7 +127,7 @@ public class DatasetSeeder {
         postDataset(request);
     }
 
-    public static void seedBookDataset8() {
+    public static void seedBookDataset9() {
         CreateDatasetRequest request = new CreateDatasetRequest(
                 "Дані для таблиці з апдейтами",
                 "INSERT INTO your_table_name (name, number_plate, violation, sum_fine, date_violation, date_payment) VALUES\n" +
@@ -123,7 +137,7 @@ public class DatasetSeeder {
         postDataset(request);
     }
 
-    public static void seedBookDataset9() {
+    public static void seedBookDataset10() {
         CreateDatasetRequest request = new CreateDatasetRequest(
                 "Дані для таблиці з апдейтами",
                 "INSERT INTO your_table_name (name, number_plate, violation, sum_fine, date_violation, date_payment) VALUES\n" +
