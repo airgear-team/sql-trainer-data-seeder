@@ -565,7 +565,7 @@ public class StepSeeder {
         createStep(
                 5L,
                 3L,
-                3L,
+                4L,
                 "html\\1\\5\\step3.html",
                 "sql\\1\\5\\expected3.txt",
                 OperationType.INSERT,
@@ -578,7 +578,7 @@ public class StepSeeder {
         createStep(
                 5L,
                 3L,
-                3L,
+                4L,
                 "html\\1\\5\\step4.html",
                 "sql\\1\\5\\expected4.txt",
                 OperationType.INSERT,
@@ -591,7 +591,7 @@ public class StepSeeder {
         createStep(
                 5L,
                 3L,
-                3L,
+                4L,
                 "html\\1\\5\\step5.html",
                 "sql\\1\\5\\expected5.txt",
                 OperationType.UPDATE,
@@ -604,7 +604,7 @@ public class StepSeeder {
         createStep(
                 5L,
                 4L,
-                4L,
+                5L,
                 "html\\1\\5\\step6.html",
                 "sql\\1\\5\\expected6.txt",
                 OperationType.CREATE,
@@ -617,7 +617,7 @@ public class StepSeeder {
         createStep(
                 5L,
                 3L,
-                3L,
+                4L,
                 "html\\1\\5\\step7.html",
                 "sql\\1\\5\\expected7.txt",
                 OperationType.UPDATE,
@@ -630,7 +630,7 @@ public class StepSeeder {
         createStep(
                 5L,
                 3L,
-                3L,
+                4L,
                 "html\\1\\5\\step8.html",
                 "sql\\1\\5\\expected8.txt",
                 OperationType.DELETE,
@@ -643,7 +643,7 @@ public class StepSeeder {
         createStep(
                 5L,
                 3L,
-                3L,
+                4L,
                 "html\\1\\5\\step9.html",
                 "sql\\1\\5\\expected9.txt",
                 OperationType.CREATE,
@@ -656,7 +656,7 @@ public class StepSeeder {
         createStep(
                 5L,
                 3L,
-                3L,
+                4L,
                 "html\\1\\5\\step10.html",
                 null,
                 OperationType.SELECT,

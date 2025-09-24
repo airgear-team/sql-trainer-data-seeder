@@ -48,9 +48,9 @@ public class SchemaSeeder {
 
     public static void seedSchema3() {
         CreateDbSchemaRequest request = new CreateDbSchemaRequest(
-                "Схема таблиці supply та books",
-                "CREATE TABLE books (\n" +
-                        "    book_id INT PRIMARY KEY,\n" +
+                "Схема таблиці supply та book",
+                "CREATE TABLE book (\n" +
+                        "    book_id INT PRIMARY KEY AUTO_INCREMENT,\n" +
                         "    title VARCHAR(255) NOT NULL,\n" +
                         "    author VARCHAR(255) NOT NULL,\n" +
                         "    price DECIMAL(10,2) NOT NULL,\n" +
@@ -58,7 +58,7 @@ public class SchemaSeeder {
                         ");\n" +
                         "\n" +
                         "CREATE TABLE supply (\n" +
-                        "    supply_id INT PRIMARY KEY,\n" +
+                        "    supply_id INT PRIMARY KEY AUTO_INCREMENT,\n" +
                         "    title VARCHAR(255) NOT NULL,\n" +
                         "    author VARCHAR(255) NOT NULL,\n" +
                         "    price DECIMAL(10,2) NOT NULL,\n" +
@@ -71,7 +71,7 @@ public class SchemaSeeder {
     public static void seedSchema4() {
         CreateDbSchemaRequest request = new CreateDbSchemaRequest(
                 "Схема таблиці book з полем buy",
-                "CREATE TABLE books (\n" +
+                "CREATE TABLE book (\n" +
                         "    book_id INT PRIMARY KEY,\n" +
                         "    title VARCHAR(255) NOT NULL,\n" +
                         "    author VARCHAR(255) NOT NULL,\n" +
