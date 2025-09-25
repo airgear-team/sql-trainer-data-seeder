@@ -25,6 +25,11 @@ public class Seeder {
         DatasetSeeder.seedDataset7();
         DatasetSeeder.seedDataset8();
         DatasetSeeder.seedDataset9();
+        DatasetSeeder.seedDataset10();
+        DatasetSeeder.seedDataset11();
+        DatasetSeeder.seedDataset12();
+
+
 
 
         SchemaSeeder.seedSchema1();

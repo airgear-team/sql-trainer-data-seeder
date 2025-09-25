@@ -855,7 +855,7 @@ public class StepSeeder {
         createStep(
                 7L,
                 6L,
-                6L,
+                7L,
                 "html\\1\\7\\step2.html",
                 "sql\\1\\7\\expected2.txt",
                 OperationType.INSERT,
@@ -867,8 +867,8 @@ public class StepSeeder {
     public static void seedStep1_7_3() {
         createStep(
                 7L,
-                7L,
-                7L,
+                6L,
+                8L,
                 "html\\1\\7\\step3.html",
                 "sql\\1\\7\\expected3.txt",
                 OperationType.UPDATE,
@@ -880,8 +880,8 @@ public class StepSeeder {
     public static void seedStep1_7_4() {
         createStep(
                 7L,
-                7L,
-                7L,
+                6L,
+                9L,
                 "html\\1\\7\\step4.html",
                 "sql\\1\\7\\expected4.txt",
                 OperationType.SELECT,
@@ -894,7 +894,7 @@ public class StepSeeder {
         createStep(
                 7L,
                 7L,
-                7L,
+                9L,
                 "html\\1\\7\\step5.html",
                 "sql\\1\\7\\expected5.txt",
                 OperationType.UPDATE,
@@ -907,7 +907,7 @@ public class StepSeeder {
         createStep(
                 7L,
                 7L,
-                9L,
+                11L,
                 "html\\1\\7\\step6.html",
                 "sql\\1\\7\\expected6.txt",
                 OperationType.CREATE,
@@ -920,7 +920,7 @@ public class StepSeeder {
         createStep(
                 7L,
                 7L,
-                9L,
+                12L,
                 "html\\1\\7\\step7.html",
                 "sql\\1\\7\\expected7.txt",
                 OperationType.DELETE,
@@ -933,9 +933,9 @@ public class StepSeeder {
         createStep(
                 7L,
                 7L,
-                9L,
-                "html\\1\\7\\step7.html",
-                "sql\\1\\7\\expected7.txt",
+                12L,
+                "html\\1\\7\\step8.html",
+                "sql\\1\\7\\expected8.txt",
                 OperationType.SELECT,
                 9,
                 StepType.PRACTICE

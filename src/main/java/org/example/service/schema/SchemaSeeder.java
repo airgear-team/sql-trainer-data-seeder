@@ -101,22 +101,6 @@ public class SchemaSeeder {
 
     public static void seedSchema6() {
         CreateDbSchemaRequest request = new CreateDbSchemaRequest(
-                "Схема таблиці fine",
-                "    create table fine (\n" +
-                        "            fine_id int primary key auto_increment,\n" +
-                        "            name varchar(30),\n" +
-                        "    number_plate varchar(6),\n" +
-                        "    violation varchar(50),\n" +
-                        "    sum_fine decimal(8,2),\n" +
-                        "    date_violation date,\n" +
-                        "    date_payment date"
-        );
-        postSchema(request);
-    }
-
-
-    public static void seedSchema7() {
-        CreateDbSchemaRequest request = new CreateDbSchemaRequest(
                 "Схема таблиці fine та traffic_violation ",
                 "CREATE TABLE traffic_violation (\n" +
                         "    violation_id INT PRIMARY KEY AUTO_INCREMENT,\n" +
@@ -132,6 +116,38 @@ public class SchemaSeeder {
                         "    sum_fine DECIMAL(10,2) NULL,\n" +
                         "    date_violation DATE NOT NULL,\n" +
                         "    date_payment DATE NULL\n" +
+                        ");\n"
+        );
+        postSchema(request);
+    }
+
+
+    public static void seedSchema7() {
+        CreateDbSchemaRequest request = new CreateDbSchemaRequest(
+                "Схема таблиці fine, traffic_violation та payment",
+                "CREATE TABLE traffic_violation (\n" +
+                        "    violation_id INT PRIMARY KEY AUTO_INCREMENT,\n" +
+                        "    violation VARCHAR(255) NOT NULL,\n" +
+                        "    sum_fine DECIMAL(10,2) NOT NULL\n" +
+                        ");\n" +
+                        "\n" +
+                        "CREATE TABLE fine (\n" +
+                        "    fine_id INT PRIMARY KEY AUTO_INCREMENT,\n" +
+                        "    name VARCHAR(50) NOT NULL,\n" +
+                        "    number_plate VARCHAR(10) NOT NULL,\n" +
+                        "    violation VARCHAR(255) NOT NULL,\n" +
+                        "    sum_fine DECIMAL(10,2) NULL,\n" +
+                        "    date_violation DATE NOT NULL,\n" +
+                        "    date_payment DATE NULL\n" +
+                        ");\n" +
+                        "\n" +
+                        "CREATE TABLE payment (\n" +
+                        "    payment_id INT PRIMARY KEY AUTO_INCREMENT,\n" +
+                        "    name VARCHAR(50) NOT NULL,\n" +
+                        "    number_plate VARCHAR(10) NOT NULL,\n" +
+                        "    violation VARCHAR(255) NOT NULL,\n" +
+                        "    date_violation DATE NOT NULL,\n" +
+                        "    date_payment DATE NOT NULL\n" +
                         ");\n"
         );
         postSchema(request);
