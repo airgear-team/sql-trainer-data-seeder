@@ -691,7 +691,7 @@ public class StepSeeder {
         createStep(
                 6L,
                 5L,
-                5L,
+                6L,
                 "html\\1\\6\\step1.html",
                 "sql\\1\\6\\expected1.txt",
                 OperationType.SELECT,
@@ -704,7 +704,7 @@ public class StepSeeder {
         createStep(
                 6L,
                 5L,
-                5L,
+                6L,
                 "html\\1\\6\\step2.html",
                 "sql\\1\\6\\expected2.txt",
                 OperationType.SELECT,
@@ -717,7 +717,7 @@ public class StepSeeder {
         createStep(
                 6L,
                 5L,
-                5L,
+                6L,
                 "html\\1\\6\\step3.html",
                 "sql\\1\\6\\expected3.txt",
                 OperationType.SELECT,
@@ -730,7 +730,7 @@ public class StepSeeder {
         createStep(
                 6L,
                 5L,
-                5L,
+                6L,
                 "html\\1\\6\\step4.html",
                 "sql\\1\\6\\expected4.txt",
                 OperationType.SELECT,
@@ -743,7 +743,7 @@ public class StepSeeder {
         createStep(
                 6L,
                 5L,
-                5L,
+                6L,
                 "html\\1\\6\\step5.html",
                 "sql\\1\\6\\expected5.txt",
                 OperationType.SELECT,
@@ -756,7 +756,7 @@ public class StepSeeder {
         createStep(
                 6L,
                 5L,
-                5L,
+                6L,
                 "html\\1\\6\\step6.html",
                 "sql\\1\\6\\expected6.txt",
                 OperationType.SELECT,
@@ -769,7 +769,7 @@ public class StepSeeder {
         createStep(
                 6L,
                 5L,
-                5L,
+                6L,
                 "html\\1\\6\\step7.html",
                 "sql\\1\\6\\expected7.txt",
                 OperationType.SELECT,
@@ -782,7 +782,7 @@ public class StepSeeder {
         createStep(
                 6L,
                 5L,
-                5L,
+                6L,
                 "html\\1\\6\\step8.html",
                 "sql\\1\\6\\expected8.txt",
                 OperationType.SELECT,
@@ -795,7 +795,7 @@ public class StepSeeder {
         createStep(
                 6L,
                 5L,
-                5L,
+                6L,
                 "html\\1\\6\\step9.html",
                 "sql\\1\\6\\expected9.txt",
                 OperationType.SELECT,
@@ -808,7 +808,7 @@ public class StepSeeder {
         createStep(
                 6L,
                 5L,
-                5L,
+                6L,
                 "html\\1\\6\\step10.html",
                 null,
                 OperationType.SELECT,

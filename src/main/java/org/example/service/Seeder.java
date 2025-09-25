@@ -16,15 +16,15 @@ public class Seeder {
         LessonSeeder.createLessonsModule1();
 
 
-        DatasetSeeder.seedBookDataset1();
-        DatasetSeeder.seedBookDataset2();
-        DatasetSeeder.seedBookDataset3();
-        DatasetSeeder.seedBookDataset4();
-        DatasetSeeder.seedBookDataset5();
-        DatasetSeeder.seedBookDataset6();
-        DatasetSeeder.seedBookDataset7();
-        DatasetSeeder.seedBookDataset8();
-        DatasetSeeder.seedBookDataset9();
+        DatasetSeeder.seedDataset1();
+        DatasetSeeder.seedDataset2();
+        DatasetSeeder.seedDataset3();
+        DatasetSeeder.seedDataset4();
+        DatasetSeeder.seedDataset5();
+        DatasetSeeder.seedDataset6();
+        DatasetSeeder.seedDataset7();
+        DatasetSeeder.seedDataset8();
+        DatasetSeeder.seedDataset9();
 
 
         SchemaSeeder.seedSchema1();
