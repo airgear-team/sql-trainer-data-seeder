@@ -1,0 +1,12 @@
+SELECT 
+    name, 
+    SUM((DATEDIFF(date_last, date_first) + 1) * per_diem) AS Сума
+FROM trip
+WHERE name IN (
+    SELECT name
+    FROM trip
+    GROUP BY name
+    HAVING COUNT(*) > 3
+)
+GROUP BY name
+ORDER BY Сума DESC;

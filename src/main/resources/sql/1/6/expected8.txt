@@ -1,4 +1,6 @@
-select monthname(date_first) as 'Месяц', count(monthname(date_first)) as 'Количество'
+select
+monthname(date_first) as 'Місяць',
+count(monthname(date_first)) as 'Кількість'
 from trip
-group by Месяц
-order by Количество desc, Месяц
+group by Місяць
+order by Кількість desc, Місяць

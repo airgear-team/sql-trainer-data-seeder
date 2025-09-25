@@ -810,10 +810,10 @@ public class StepSeeder {
                 5L,
                 6L,
                 "html\\1\\6\\step10.html",
-                null,
+                "sql\\1\\6\\expected10.txt",
                 OperationType.SELECT,
                 11,
-                StepType.CREATIVE
+                StepType.PRACTICE
         );
     }
 

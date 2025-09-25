@@ -1,4 +1,4 @@
-select name, city, datediff(date_last, date_first)+1 as 'Длительность'
+select name, city, datediff(date_last, date_first)+1 as 'Тривалість'
 from trip
-where city != 'Москва' and city != 'Санкт-Петербург'
-order by Длительность desc
+where city != 'Київ' and city != 'Одеса'
+order by Тривалість desc

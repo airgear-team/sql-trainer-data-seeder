@@ -1,5 +1,5 @@
-select city, count(city) as 'Количество'
+select city, count(city) as 'Кількість'
 from trip
 group by city
-order by Количество desc
+order by Кількість desc
 limit 2

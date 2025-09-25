@@ -1,4 +1,4 @@
 select distinct name
 from trip
-where city like 'Москва'
+where city like 'Київ'
 order by name
